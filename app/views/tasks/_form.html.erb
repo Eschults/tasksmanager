@@ -1,0 +1,11 @@
+<%= bootstrap_form_for(@task) do |f| %>
+  <%= f.text_field :title%>
+
+  <%= f.text_field :description %>
+
+  <%= f.select :priority, [["Urgent", 5], ["Important", 4], ["Moyen", 3], ["Reportable", 2], ["Cosmétique", 1]] %>
+
+  <%= f.check_box :status %>
+
+  <%= f.submit "Save task", class: "btn btn-primary" %>
+<% end %>

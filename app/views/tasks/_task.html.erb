@@ -1,0 +1,21 @@
+<h2>
+  <%= task.title %>
+  <% if task.status %>
+    <i class="fa fa-check"></i>
+  <% else %>
+    <i class="fa fa-close"></i>
+  <% end %>
+</h2>
+<p><%= task.description %></p>
+<p>
+  <% task.priority.times do %>
+    <i class="fa fa-star"></i>
+  <% end %>
+</p>
+<%= link_to "Show task", task_path(task), class: "btn btn-primary" %>
+<%= link_to "Edit task", edit_task_path(task), class: "btn btn-primary" %>
+<%= link_to "Delete task", task_path(task),
+    method: :delete,
+    data: {confirm: "Etes-vous sûr de vouloir supprimer #{task.title} ?"},
+    class: "btn btn-danger"
+%>
